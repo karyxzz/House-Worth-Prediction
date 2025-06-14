@@ -3,6 +3,7 @@ import json
 import pickle
 import numpy as np
 from aqi_service import get_coordinates, get_aqi_data
+import os
 
 app = Flask(__name__)
 
@@ -59,4 +60,6 @@ def air_quality():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Default to 5000 if PORT not set
+    app.run(host="0.0.0.0", port=port)
