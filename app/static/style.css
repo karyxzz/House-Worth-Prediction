@@ -1,0 +1,176 @@
+/* Global Styles */
+@import url("https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nosifer&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: whitesmoke;
+  background-image: url(./images/bgimage.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2.5rem;
+  color: whitesmoke;
+  padding: 1rem 0;
+  font-family: "Nosifer", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  /* font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight: 400;
+  font-style: normal; */
+}
+
+/* Main container layout */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 1200px;
+  /* border: 0.3px solid whitesmoke; */
+  border-radius: 15px;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Form section styling */
+.form-section {
+  flex: 1;
+  padding: 2rem;
+}
+
+.form-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-section label {
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  font-family: "Comic Relief", system-ui;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* .form-section input {
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid whitesmoke;
+  border-radius: 5px;
+} */
+.form-section input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+  padding: 1rem 0.2rem;
+  font-size: 1rem;
+  color: whitesmoke;
+  outline: none;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.form-section input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.form-section button {
+  margin-top: 2rem;
+  padding: 0.9rem;
+  background-color: #65847e;
+  color: whitesmoke;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-family: "Comic Relief", system-ui;
+  font-weight: 700;
+  font-style: normal;
+  cursor: pointer;
+}
+
+.form-section input[type="number"]::-webkit-outer-spin-button,
+.form-section input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* .form-section button:hover {
+  scale: 1;
+} */
+
+/* Stylish divider */
+.main-container::before {
+  content: "";
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, whitesmoke, transparent);
+  position: relative;
+  z-index: 1;
+}
+
+/* Result section styling */
+.result-section {
+  flex: 1;
+  padding: 2rem;
+  position: relative;
+}
+
+/* Output block without background */
+.output-block {
+  border: none;
+  padding: 1rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: whitesmoke;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Location dropdown styling */
+.dropdown {
+  list-style-type: none;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
+  border: 1px solid whitesmoke;
+  border-radius: 5px;
+  max-height: 150px;
+  overflow-y: auto;
+  font-family: "Alatsi", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dropdown li {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+/* Spinner Animation */
+.spinner {
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top: 5px solid #ffffff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 2rem auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

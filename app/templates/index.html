@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>House Worth Prediction</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <h1 class="heading">House Worth Prediction</h1>
+    <div class="main-container">
+      <div class="form-section">
+        <form id="predictForm">
+          <label for="total_sqft">Total Sqft:</label>
+          <input type="number" id="total_sqft" required />
+
+          <label for="bath">Bath:</label>
+          <input type="number" id="bath" required />
+
+          <label for="bhk">BHK:</label>
+          <input type="number" id="bhk" required />
+
+          <label for="locationSearch">Location:</label>
+          <input
+            type="text"
+            id="locationSearch"
+            placeholder="Search location..."
+            autocomplete="off"
+            required
+          />
+          <ul id="locationList" class="dropdown"></ul>
+
+          <button type="submit">Predict</button>
+        </form>
+      </div>
+
+      <div class="result-section">
+        <div class="spinner" id="loadingSpinner" style="display: none"></div>
+        <h2 id="result" class="output-block"></h2>
+        <h2 id="aqiResult" class="output-block"></h2>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
